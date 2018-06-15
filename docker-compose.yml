@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+   nginx-rtsp:
+    build: ./containers/nginx-rtsp
+    ports:
+     - "80:80"
+    expose:
+     - "1935"
+
+   ffmpeg:
+    build: ./containers/ffmpeg
+    depends_on:
+     - nginx-rtsp
+#    privileged: true
+    devices:
+     - "/dev/vchiq:/dev/vchiq"
