@@ -7,6 +7,10 @@ services:
      - "80:80"
     expose:
      - "1935"
+    environment:
+     - CAMERA_NAME=${CAMERA_NAME}
+     - CAMERA_USERNAME=${CAMERA_USERNAME}
+     - CAMERA_PASSWORD=${CAMERA_PASSWORD}
 
    ffmpeg:
     build: ./containers/ffmpeg
