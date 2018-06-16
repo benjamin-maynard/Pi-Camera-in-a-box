@@ -11,7 +11,7 @@ Note: This project relies on FFMpeg and Nginx being compiled from source. This c
 1. Vanilla Raspberry Pi running Raspian Stretch Light. Needs to be connected to the network, with SSH access enabled (see https://www.raspberrypi.org/forums/viewtopic.php?t=191252).
 2. Raspberry Pi Camera Module connected and enabled through raspi-config.
 
-# Recommendations
+### Recommendations
 1. Make sure you have performed basic security hardening on your Pi (default password, SSH keys, etc)
 2. This project does not currently implement HTTPS. If you are accessing externally, perform either over VPN or a Reverse Proxy with SSL enabled.
 
