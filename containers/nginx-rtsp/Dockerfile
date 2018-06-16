@@ -13,6 +13,10 @@ RUN git clone https://github.com/sergey-dryabzhinsky/nginx-rtmp-module.git && cu
 # Copy NGINX Configuration
 COPY resources/nginx.conf /usr/local/nginx/conf/nginx.conf
 
+# Setup Web UI
+RUN mkdir -p /var/www/html
+COPY resources/web-ui /var/www/html
+
 # Set EntryPoint Script
 COPY resources/entrypoint.sh /
 RUN chmod +x /entrypoint.sh
