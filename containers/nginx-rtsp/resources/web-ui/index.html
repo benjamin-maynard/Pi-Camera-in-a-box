@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Pi-Camera-in-a-box | CAMERANAME</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- VideoJS  -->
+  <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Live Feed: CAMERANAME</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="https://github.com/benjamin-maynard/Pi-Camera-in-a-box">GitHub</a></li>
+      </ul>
+
+  </nav>
+
+    <br>
+
+  <div class="section no-pad-bot" id="index-banner">
+
+      <div class="row center">
+
+        <center><video id="Pi-Camera-in-a-box" class="video-js vjs-default-skin" controls preload="auto" width="960" height="540"
+         data-setup='{}'>
+       </video></center>
+
+         <script>
+           const player = videojs('Pi-Camera-in-a-box');
+           player.src({
+             src: 'http://10.67.3.15:80/hls/stream.m3u8',
+             type: 'application/x-mpegURL'
+           });
+         </script>
+
+
+      </div>
+      <br>
+
+    </div>
+  </div>
+
+
+
+
+<footer class="page-footer light-blue lighten-1">
+    <div class="footer-copyright">
+      <div class="container">
+      Pi-Camera-in-a-box by Benjamin Maynard. Feed may be delayed by up to 15 seconds.
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
