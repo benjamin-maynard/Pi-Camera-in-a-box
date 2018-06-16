@@ -7,10 +7,16 @@ MAINTAINER Benjamin Maynard <benjamin@maynard.io>
 # Install Essential Packages
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential libpcre3 libpcre3-dev libssl-dev build-essential make gcc libpcre++-dev zlib1g-dev libbz2-dev libxslt1-dev libxml2-dev libgd2-xpm-dev libgeoip-dev libgoogle-perftools-dev libperl-dev libcurl4-openssl-dev git libpcre3-dev libavfilter-dev libavformat-dev libavcodec-dev libomxil-bellagio-dev libraspberrypi-bin
 
-# Clone FFMpeg, Build and Install
+# Clone FFmpeg, Build and Install
 WORKDIR /root
 RUN git clone https://github.com/FFmpeg/FFmpeg.git
-RUN cd FFmpeg && ./configure --enable-cross-compile --cross-prefix=${CCPREFIX} --arch=armel --target-os=linux --enable-gpl --enable-omx --enable-omx-rpi --enable-nonfree && make -j4 && make
+WORKDIR /root/FFmpeg
+RUN ./configure --enable-cross-compile --cross-prefix=${CCPREFIX} --arch=armel --target-os=linux --enable-gpl --enable-omx --enable-omx-rpi --enable-nonfree
+RUN make -j4
+RUN make install
+
+# Remove FFmpeg Source
+RUN rm -rf /root/FFmpeg
 
 # Set EntryPoint Script
 COPY resources/entrypoint.sh /
