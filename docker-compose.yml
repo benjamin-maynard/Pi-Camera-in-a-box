@@ -12,6 +12,6 @@ services:
     build: ./containers/ffmpeg
     depends_on:
      - nginx-rtsp
-#    privileged: true
+    privileged: true
     devices:
      - "/dev/vchiq:/dev/vchiq"
