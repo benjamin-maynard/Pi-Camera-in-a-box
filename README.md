@@ -8,9 +8,12 @@ This project is based on Docker, see below for full instructions on how to insta
 Note: This project relies on FFMpeg and Nginx being compiled from source. This can take a LONG time on the Raspberry Pi due to the limited resources. Consequently, I have compiled images which are stored on the Docker Hub. If you do not wish to use these pre-baked Docker Images, replace **docker-compose pull** below with **docker-compose build**.
 
 ### Pre-Requisites
-
 1. Vanilla Raspberry Pi running Raspian Stretch Light. Needs to be connected to the network, with SSH access enabled (see https://www.raspberrypi.org/forums/viewtopic.php?t=191252).
 2. Raspberry Pi Camera Module connected and enabled through raspi-config.
+
+# Recommendations
+1. Make sure you have performed basic security hardening on your Pi (default password, SSH keys, etc)
+2. This project does not currently implement HTTPS. If you are accessing externally, perform either over VPN or a Reverse Proxy with SSL enabled.
 
 ### Installation Instructions - Quickest Way
     ## Upgrade System
