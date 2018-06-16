@@ -1,3 +1,3 @@
-## Raspberry Pi Zero - Camera-In-A-Box
+## Pi-Camera-in-a-box
 
-Lots TBC
+Documentation to be provided.
