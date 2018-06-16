@@ -44,8 +44,11 @@ Wait around 60 seconds, and then visit http://YOUR-CAMERA-IP/ui. You will be pro
 
 ### Work in Progress
 This project is still a work in progress, the following changes are planned:
-- [ ] Optimise FFMpeg Stream
-- [ ] Reduce Image Sizes
+- [ ] Optimise FFMpeg stream
+- [ ] Reduce image sizes
+- [ ] Support image horizontal and vertical flipping
+- [ ] Support different resolutions
+- [ ] Improve Web UI mobile display
 
 ### Screenshot
 ![Pi-Camera-in-a-box](Screenshot.png?raw=true "Pi-Camera-in-a-box")
