@@ -3,6 +3,7 @@ services:
 
    nginx-rtsp:
     build: ./containers/nginx-rtsp
+    image: benjaminmaynard/nginx-rtsp
     ports:
      - "80:80"
     expose:
@@ -11,10 +12,13 @@ services:
      - CAMERA_NAME=${CAMERA_NAME}
      - CAMERA_USERNAME=${CAMERA_USERNAME}
      - CAMERA_PASSWORD=${CAMERA_PASSWORD}
+    restart: always
 
    ffmpeg:
     build: ./containers/ffmpeg
+    image: benjaminmaynard/ffmpeg
     depends_on:
      - nginx-rtsp
     devices:
      - "/dev/vchiq:/dev/vchiq"
+    restart: always
