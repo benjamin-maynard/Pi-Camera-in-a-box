@@ -19,6 +19,7 @@ RUN ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module && make
 # Remove Source Code
 RUN rm -rf /root/nginx
 RUN rm -rf /root/nginx-rtmp-module
+RUN rm /root/nginx.tar.gz
 
 # Copy NGINX Configuration
 COPY resources/nginx.conf /usr/local/nginx/conf/nginx.conf
