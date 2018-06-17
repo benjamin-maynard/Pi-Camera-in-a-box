@@ -15,9 +15,6 @@ RUN ./configure --enable-cross-compile --cross-prefix=${CCPREFIX} --arch=armel -
 RUN make -j4
 RUN make install
 
-# Remove FFmpeg Source
-RUN rm -rf /root/FFmpeg
-
 # Set EntryPoint Script
 COPY resources/entrypoint.sh /
 RUN chmod +x /entrypoint.sh
