@@ -12,7 +12,7 @@ services:
      - CAMERA_NAME=${CAMERA_NAME}
      - CAMERA_USERNAME=${CAMERA_USERNAME}
      - CAMERA_PASSWORD=${CAMERA_PASSWORD}
-    restart: always
+    restart: unless-stopped
 
    ffmpeg:
     build: ./containers/ffmpeg
@@ -21,4 +21,4 @@ services:
      - nginx-rtsp
     devices:
      - "/dev/vchiq:/dev/vchiq"
-    restart: always
+    restart: unless-stopped
