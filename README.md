@@ -55,8 +55,7 @@ Wait around 60 seconds, and then visit http://YOUR-CAMERA-IP/ui. You will be pro
 | STREAM_HEIGHT         | The stream hight in pixels, default 1080 (1080p). Depending on where your camera is placed experiment with higher and lower resolutions. I've found lower resolutions are better for a bigger field of view in the house     |
 | STREAM_BITRATE        | The stream bitrate in bytes|
 | FLIP_HORIZONTALLY     | **(yes/no)** Should the video be flipped horizontally (mirror view). This is useful depending on the orientation of your camera              |
-| FLIP_VERTICALLY       | **(yes/no)**
-Should the video be flipped vertically? This is useful if your camera is mounted upside down               |
+| FLIP_VERTICALLY       | **(yes/no)** Should the video be flipped vertically? This is useful if your camera is mounted upside down               |
 
 
 
