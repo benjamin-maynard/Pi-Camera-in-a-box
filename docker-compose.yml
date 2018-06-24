@@ -10,8 +10,7 @@ services:
      - "1935"
     environment:
      - CAMERA_NAME=${CAMERA_NAME}
-     - CAMERA_USERNAME=${CAMERA_USERNAME}
-     - CAMERA_PASSWORD=${CAMERA_PASSWORD}
+     - AUTHORISED_USERS=${AUTHORISED_USERS}
     restart: unless-stopped
 
    ffmpeg:
