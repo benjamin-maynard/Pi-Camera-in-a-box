@@ -13,9 +13,5 @@ if [ "$FLIP_VERTICALLY" -eq "yes" ]; then
    VF=-vf;
 fi
 
-
-FLIP_HORIZONTALLY
-FLIP_VERTICALLY
-
 # Start Stream to nginx
 raspivid -o - -t 0 -fps $FRAMES_PER_SECOND -b $STREAM_BITRATE -w $STREAM_WIDTH -h $STREAM_HEIGHT $HF $VF | ffmpeg -re -ar 44100 -ac 2 -acodec pcm_s16le -f s16le -ac 2 -i /dev/zero -f h264 -i - -vcodec copy -acodec aac -ab 128k -g 50 -strict experimental -framerate $FRAMES_PER_SECOND -f flv rtmp://nginx-rtsp/show/stream
