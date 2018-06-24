@@ -11,13 +11,20 @@ services:
     environment:
      - CAMERA_NAME=${CAMERA_NAME}
      - AUTHORISED_USERS=${AUTHORISED_USERS}
-    restart: always
+    restart: unless-stopped
 
    ffmpeg:
     build: ./containers/ffmpeg
     image: benjaminmaynard/ffmpeg
+    environment:
+     - FRAMES_PER_SECOND=${FRAMES_PER_SECOND}
+     - STREAM_WIDTH=${STREAM_WIDTH}
+     - STREAM_HEIGHT=${STREAM_HEIGHT}
+     - STREAM_BITRATE=${STREAM_BITRATE}
+     - FLIP_HORIZONTALLY=${FLIP_HORIZONTALLY}
+     - FLIP_VERTICALLY=${FLIP_VERTICALLY}
     depends_on:
      - nginx-rtsp
     devices:
      - "/dev/vchiq:/dev/vchiq"
-    restart: always
+    restart: unless-stopped
