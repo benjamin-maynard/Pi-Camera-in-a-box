@@ -45,6 +45,8 @@ Pi-Camera-in-a-box is fully Dockerized, removing the complexity of configuring a
 
 Wait around 60 seconds, and then visit http://YOUR-CAMERA-IP/ui. You will be prompted for the credentials that you earlier defined. You should now be able to see the live feed from your camera.
 
+**IMPORTANT: Please make sure you append the /ui to the web address. Otherwise you will be presented with a 401 error. I will implement a redirect at some point in the near future.**
+
 ## Configuration Settings
 | Setting               | Purpose       |
 | --------------------- |---------------|
