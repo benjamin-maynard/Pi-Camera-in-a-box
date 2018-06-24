@@ -11,7 +11,7 @@ for i in "${ADDR[@]}"; do
 CAMUSERNAME=$(echo "$i" | cut -d: -f1)
 CAMPASSWORD=$(echo "$i" | cut -d: -f2)
 
-Add Variable to .htpasswd
+# Add Variable to .htpasswd
 printf "$CAMUSERNAME:$(openssl passwd -crypt $CAMPASSWORD)\n" >> /usr/local/nginx/cameraauth.htpasswd
 
 done
