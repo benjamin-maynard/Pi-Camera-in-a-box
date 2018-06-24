@@ -3,7 +3,7 @@ services:
 
    nginx-rtsp:
     build: ./containers/nginx-rtsp
-    image: benjaminmaynard/nginx-rtsp
+    image: benjaminmaynard/nginx-rtsp:1.0
     ports:
      - "80:80"
     expose:
@@ -15,7 +15,7 @@ services:
 
    ffmpeg:
     build: ./containers/ffmpeg
-    image: benjaminmaynard/ffmpeg
+    image: benjaminmaynard/ffmpeg:1.0
     environment:
      - FRAMES_PER_SECOND=${FRAMES_PER_SECOND}
      - STREAM_WIDTH=${STREAM_WIDTH}
