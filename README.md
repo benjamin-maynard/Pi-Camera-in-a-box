@@ -1,4 +1,7 @@
 ## Pi-Camera-in-a-box
+
+**Current Version:** 1.00 [(Changelog)](Changelog.md)
+
 Pi-Camera-in-a-box will take a vanilla Raspberry Pi with a Camera Module, and stream the footage directly to your web browser. The stream resolution, FPS and Bitrate are fully configurable. Pi-Camera-in-a-box is capable of streaming 1080P, 25FPS video from a Raspberry Pi Zero.
 
 Pi-Camera-in-a-box uses raspivid to capture the video, FFmpeg to encode, and nginx compiled with the [nginx-rtmp](https://github.com/arut/nginx-rtmp-module) module to deliver a HLS steam. This is displayed on a custom Web UI that uses [video.js](https://github.com/videojs/videojs-contrib-hls) to display in the browser.
