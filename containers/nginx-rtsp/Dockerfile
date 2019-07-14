@@ -26,8 +26,8 @@ RUN apt-get update \
     libcurl4-openssl-dev \
     git \
     && cd /root \
-    && git clone https://github.com/sergey-dryabzhinsky/nginx-rtmp-module.git \
-    && curl -o nginx.tar.gz http://nginx.org/download/nginx-1.14.0.tar.gz \
+    && git clone --single-branch --branch dev https://github.com/sergey-dryabzhinsky/nginx-rtmp-module.git \
+    && curl -o nginx.tar.gz http://nginx.org/download/nginx-1.17.1.tar.gz \
     && mkdir nginx \
     && tar xf nginx.tar.gz -C nginx --strip-components 1 \
     && cd /root/nginx && ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module && make -j 1 \
