@@ -4,12 +4,8 @@
   <head>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Pi-Camera-in-a-box | CAMERANAME</title>
-
-    <!-- VideoJS  -->
     <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-    <script src="https://unpkg.com/video.js/dist/video.js"></script>
-    <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+    <title>Pi-Camera-in-a-box | CAMERANAME</title>
 
   </head>
 
@@ -46,15 +42,16 @@
       
       <div class="mt-5 d-flex justify-content-center">
 
-        <video id="Pi-Camera-in-a-box" class="video-js vjs-default-skin" controls preload="auto" width="960" height="540"
-        data-setup='{}'></video>
-
+        <video-js id=vid1 width=960 height=540 class="vjs-default-skin" controls>
+          <source
+            src="../hls/stream.m3u8"
+            type="application/x-mpegURL">
+        </video-js>
+        <script src="https://unpkg.com/video.js/dist/video.js"></script>
+        <script src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>      
         <script>
-          const player = videojs('Pi-Camera-in-a-box');
-          player.src({
-            src: '../hls/stream.m3u8',
-            type: 'application/x-mpegURL'
-          });
+          var player = videojs('vid1');
+          player.play();
         </script>
  
       </div>
@@ -74,8 +71,6 @@
 
     </div>
 
-
   </body>
-
 
 </html>
